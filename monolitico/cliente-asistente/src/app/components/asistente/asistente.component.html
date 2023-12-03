@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-sm-4 offset-sm-4">
+   <div class="card card-body">
+  <form >
+    <div class="form-group">
+            <input type="text" name="nombre" [(ngModel)]="asistencia.caracteristicas" class="form-control" placeholder="Caracteristicas del equipo" autofocus>
+    </div>
+    <div class="form-group">
+        <input type="text" name="descripcion" [(ngModel)]="asistencia.descripcion" class="form-control" placeholder="describa la asistencia" autofocus>
+</div>
+<div class="form-group">
+    <input type="text" name="serie" [(ngModel)]="asistencia.soporte" class="form-control" placeholder="Soporte" autofocus>
+</div>
+<button (click)="crear()" class="btn btn-primary btn-block">
+    <img src="./assets/create.png" height="18px" alt="">
+  </button>
+  </form>
+   </div>
+    </div>
+  </div>
+
+
+  <div class="row my-4 text-center">
+    <div *ngFor="let asis of asistencias"class="col-md-4 p-4">
+      <div class="card bg-light card-project">
+        <div class="container-fluid py-2">
+        <div class="card-body">
+          <h4>Asistente de mantenimiento</h4>
+          <p>  Caracteristicas:    {{asis.caracteristicas}}</p>
+          <p>  Descripcion:     {{asis.descripcion}}</p>
+          <p>  Soporte:         {{asis.soporte}}</p>
+          <a (click)=
+            "eliminar(asis._id, asis.caracteristicas,asis.descripcion,asis.soporte)" class="btn" style="color: brown;">
+            Dejar en bodega
+          </a>
+          <a [routerLink]="['/asistente/edit', asis._id]" class="btn">
+          <img src="./assets/edit.png" height="18px" alt="">
+        </a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

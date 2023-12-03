@@ -1,0 +1,17 @@
+<h1>Bodega de equipos</h1>
+<div class="row my-4 text-center">
+    <div *ngFor="let asis of asistentes"class="col-md-4 p-4">
+      <div class="card bg-light card-project">
+        <div class="container-fluid py-2">
+        <div class="card-body">
+          <h4>Asistente de mantenimiento</h4>
+          <p>  Caracteristicas:    {{asis.caracteristicas}}</p>
+          <p>  Descripcion:     {{asis.descripcion}}</p>
+          <p>  Soporte:         {{asis.soporte}}</p>
+        </div>
+        </div>
+        <a (click)="crear(asis._id,asis.caracteristicas,asis.descripcion,asis.soporte)" class="btn" style="color: green;">Regresarlo</a>
+        <a (click)="eliminar(asis._id)" class="btn" style="color: red;">Desaparecerlo</a>
+      </div>
+    </div>
+  </div>
